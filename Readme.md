@@ -5,26 +5,28 @@ Create ScriptableObjects from Excel, with minimal markup.
 
 ## Usage
 
-	public class GameData : ScriptableObject
-	{
-		// Sheet to convert into ScriptableObjects
-		[ExcelSheet("Enemies")]
-		[SerializeField]
-		public List<EnemyData> m_enemies;
-	}
-	
-	public class EnemyData : ScriptableObject
-	{
-		// Fill with data from column with "HP" as header
-		[ExcelColumn]
-		[SerializeField]
-		public int hp;
-	
-		// Can specify explicit column name to look for
-		[ExcelColumn("Name")]
-		[SerializeField]
-		public string shortName;
-	}
+```C#
+public class GameData : ScriptableObject
+{
+	// Sheet to convert into ScriptableObjects
+	[ExcelSheet("Enemies")]
+	[SerializeField]
+	public List<EnemyData> m_enemies;
+}
+
+public class EnemyData : ScriptableObject
+{
+	// Fill with data from column with "HP" as header
+	[ExcelColumn]
+	[SerializeField]
+	public int hp;
+
+	// Can specify explicit column name to look for
+	[ExcelColumn("Name")]
+	[SerializeField]
+	public string shortName;
+}
+```
 
 
 ## Caveats
